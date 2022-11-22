@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js">
+    </script>
+
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+        
+    </script> 
+
+    
+
+    <script>
+        $(function () {
+            $("#imageList").sortable({
+                update: function (event, ui) {
+                    getIdsOfImages();
+                }       
+            });
+        });
+
+        function getIdsOfImages() {
+            var values = [];
+            $('.item').each(function (index) {
+                values.push($(this).attr("id")
+                    .replace("pic", ""));
+            });
+            $('#outputvalues').val(values);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="layout"></div><br>
+    <div id="imageList">
+        <div id="pic1" class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyFuLTBnEnHSfHp2kRiJsuBaLTZC8CqRFz10tcr7N4&s" alt="">
+        </div>
+
+        <div id="pic2" class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Z1c17Djb9MCjSH8E9B7jHcvZdlVWHBTDJtoMNf_C&s" alt="">
+        </div>
+
+        <div id="pic3" class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-WwWEFHWrX-aAC5oTCgAa2YTLvqBM-dCyrM9d7x6A&s" alt="">
+        </div>
+
+        <div id="pic4" class="item">
+            <img src="ihttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP9N1dZIcrevQbJORi-iaqlK0RIAxK5mqZQIcSt7oRAw&s" alt="">
+        </div>
+
+        <div id="pic5" class="item">
+            <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014__340.jpg" alt="">
+        </div>
+
+        <div id="pic6" class="item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ4oUNiNcnj1BHiLOErA63Fx-cnD1aDe4JVw&usqp=CAU" alt="">
+        </div>
+    </div>
+</body>
+</html>
